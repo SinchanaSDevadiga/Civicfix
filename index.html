@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        CivicFix - Smart Civic Issue Reporting
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>🏙️ CivicFix</h1>
+
+        <p>
+            Report. Track. Improve.
+        </p>
+
+        <button
+            type="button"
+            class="admin-link"
+            onclick="window.location.href='admin-login.html'">
+
+            👨‍💼 Admin
+
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <h2>
+                Make Your Community Better
+            </h2>
+
+            <p>
+                Report civic problems and help create
+                a cleaner, safer and better community.
+            </p>
+
+            <button
+                type="button"
+                onclick="showForm()">
+
+                🚨 Report an Issue
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= REPORT FORM ================= -->
+
+        <section
+            class="report-form"
+            id="reportForm">
+
+            <h2>
+                🚨 Report a Civic Issue
+            </h2>
+
+
+            <!-- IMPORTANT:
+                 No onsubmit here.
+                 Submit button directly calls submitIssue()
+            -->
+
+            <form>
+
+
+                <!-- NAME -->
+
+                <label>
+                    👤 Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+
+                <!-- CATEGORY -->
+
+                <label>
+                    🏷️ Issue Category
+                </label>
+
+                <select
+                    id="category"
+                    required>
+
+                    <option value="">
+                        Select an issue
+                    </option>
+
+                    <option value="Pothole">
+                        Pothole
+                    </option>
+
+                    <option value="Garbage">
+                        Garbage
+                    </option>
+
+                    <option value="Streetlight">
+                        Streetlight
+                    </option>
+
+                    <option value="Road Damage">
+                        Road Damage
+                    </option>
+
+                    <option value="Water Leakage">
+                        Water Leakage
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+
+                <!-- LOCATION -->
+
+                <label>
+                    📍 Location
+                </label>
+
+                <div class="location-box">
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Enter location"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        onclick="getLocation()">
+
+                        📍 Use My Current Location
+
+                    </button>
+
+                </div>
+
+
+                <p id="locationMessage"></p>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <label>
+                    📝 Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe the problem"
+                    rows="4"
+                    required></textarea>
+
+
+
+                <!-- PHOTO -->
+
+                <label>
+                    📷 Upload Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="photo"
+                    accept="image/*"
+                >
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+    type="button"
+    id="submitButton"
+    onclick="submitIssue()">
+    🚨 Submit Report
+</button>
+<button
+    type="button"
+    id="cancelEditButton"
+    onclick="cancelEdit()"
+    style="display: none;"
+>
+    ❌ Cancel Edit
+</button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard">
+
+
+            <!-- REPORTED -->
+
+            <div class="card">
+
+                <h3>
+                    📋 Reported
+                </h3>
+
+                <p id="reportedCount">
+                    0
+                </p>
+
+            </div>
+
+
+
+            <!-- PENDING -->
+
+            <div class="card">
+
+                <h3>
+                    ⏳ Pending
+                </h3>
+
+                <p id="pendingCount">
+                    0
+                </p>
+
+            </div>
+
+
+
+            <!-- IN PROGRESS -->
+
+            <div class="card">
+
+                <h3>
+                    🔄 In Progress
+                </h3>
+
+                <p id="progressCount">
+                    0
+                </p>
+
+            </div>
+
+
+
+            <!-- RESOLVED -->
+
+            <div class="card">
+
+                <h3>
+                    ✅ Resolved
+                </h3>
+
+                <p id="resolvedCount">
+                    0
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TRACK COMPLAINT ================= -->
+
+        <section class="track-section">
+
+            <h2>
+                🔎 Track Your Complaint
+            </h2>
+
+            <p>
+                Enter your Complaint ID to check the
+                current status of your report.
+            </p>
+
+
+            <div class="track-box">
+
+                <input
+                    type="text"
+                    id="trackingId"
+                    placeholder="Example: CF-2026-1001"
+                >
+
+
+                <button
+                    type="button"
+                    onclick="trackComplaint()">
+
+                    🔎 Track
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="trackingResult"
+                class="tracking-result">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RECENT ISSUES ================= -->
+
+        <section class="issues">
+
+            <h2>
+                📋 Recent Issues
+            </h2>
+
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="filters">
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="🔍 Search issues..."
+                    oninput="filterIssues()"
+                >
+
+
+                <select
+                    id="statusFilter"
+                    onchange="filterIssues()">
+
+                    <option value="All">
+                        All Statuses
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Resolved">
+                        Resolved
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ISSUES -->
+
+            <div id="issueList">
+
+                <p>
+                    No issues reported yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 CivicFix |
+            Smart Civic Issue Reporting System
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    <script type="module">
+    import { pipeline } from
+    "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+
+    window.civicAI = await pipeline(
+        "zero-shot-image-classification",
+        "Xenova/clip-vit-base-patch32"
+    );
+
+    console.log("🤖 CivicFix AI loaded successfully!");
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+/* =========================================
+   CIVICFIX ADMIN DASHBOARD
+   ========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: linear-gradient(135deg, #1769aa, #0d4f82);
+    color: white;
+    padding: 25px 40px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+
+/* ---------- HEADER BUTTONS ---------- */
+
+.admin-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-buttons button {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* Back button */
+
+.home-button {
+    background-color: white;
+    color: #1769aa;
+}
+
+.home-button:hover {
+    background-color: #e8f1f8;
+}
+
+
+/* Logout button */
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: #b02a37;
+}
+
+
+/* ---------- ADMIN TITLE ---------- */
+
+.admin-header {
+    max-width: 1200px;
+    margin: 35px auto 20px;
+    padding: 0 20px;
+}
+
+.admin-header h2 {
+    color: #1769aa;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.admin-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* ---------- DASHBOARD CARDS ---------- */
+
+.admin-dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* Individual cards */
+
+.admin-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    border-top: 5px solid #1769aa;
+
+    transition: transform 0.2s;
+}
+
+.admin-card:hover {
+    transform: translateY(-4px);
+}
+
+.admin-card h3 {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.admin-card p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1769aa;
+}
+
+
+/* ---------- CATEGORY SECTION ---------- */
+
+.category-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.category-section h2 {
+    color: #1769aa;
+    margin-bottom: 18px;
+}
+
+
+/* Category boxes container */
+
+#categoryStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+/* Category item */
+
+.category-item {
+    background-color: white;
+    padding: 18px;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+
+    border-left: 5px solid #1769aa;
+}
+
+.category-item h3 {
+    font-size: 16px;
+    color: #555;
+}
+
+.category-item p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1769aa;
+}
+
+
+/* ---------- CHART SECTION ---------- */
+
+.chart-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.chart-section h2 {
+    color: #1769aa;
+    margin-bottom: 20px;
+}
+
+
+/* Chart container */
+
+#issueChart {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Chart rows */
+
+.chart-row {
+    margin-bottom: 18px;
+}
+
+.chart-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Chart bar background */
+
+.chart-bar-container {
+    width: 100%;
+    height: 22px;
+
+    background-color: #e9eef3;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+/* Chart bar */
+
+.chart-bar {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #1769aa,
+        #42a5f5
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.5s;
+}
+
+
+/* ---------- ALL ISSUES ---------- */
+
+.admin-issues {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.admin-issues h2 {
+    color: #1769aa;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- ISSUE CARD ---------- */
+
+.admin-issue-card {
+    background-color: white;
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    border-left: 5px solid #1769aa;
+}
+
+.admin-issue-card h3 {
+    color: #1769aa;
+    margin-bottom: 10px;
+}
+
+.admin-issue-card p {
+    margin: 6px 0;
+    color: #555;
+}
+
+
+/* ---------- STATUS SELECT ---------- */
+
+.status-select {
+    padding: 8px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    background-color: white;
+
+    cursor: pointer;
+}
+
+
+/* ---------- MAP BUTTON ---------- */
+
+.map-button {
+    margin: 10px 0 15px 0;
+
+    background-color: #1769aa;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 9px 15px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.map-button:hover {
+    background-color: #0d4f82;
+}
+
+
+/* ---------- ADMIN PHOTO ---------- */
+
+.admin-photo {
+    width: 220px;
+    max-height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    margin-top: 12px;
+
+    cursor: pointer;
+
+    border: 2px solid #ddd;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background-color: #1769aa;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 50px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+
+/* Tablets */
+
+@media (max-width: 900px) {
+
+    .admin-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #categoryStats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .admin-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    #categoryStats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-header h2 {
+        font-size: 23px;
+    }
+
+    .admin-card {
+        padding: 20px;
+    }
+
+    .admin-card p {
+        font-size: 30px;
+    }
+
+    .admin-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-buttons button {
+        width: 220px;
+    }
+
+    .admin-issue-card {
+        padding: 15px;
+    }
+
+    .admin-photo {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}

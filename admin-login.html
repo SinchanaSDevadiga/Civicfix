@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>CivicFix - Admin Login</title>
+
+    <link rel="stylesheet" href="admin-login.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>🏙️ CivicFix</h1>
+
+            <h2>🔐 Admin Login</h2>
+
+            <p>
+                Login to manage civic reports
+            </p>
+
+            <form onsubmit="adminLogin(event)">
+
+                <label>
+                    👤 Username
+                </label>
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    placeholder="Enter username"
+                    required
+                >
+
+                <label>
+                    🔑 Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button type="submit">
+                    🔐 Login
+                </button>
+
+                <p id="loginMessage"></p>
+
+            </form>
+
+            <button
+                class="back-home"
+                onclick="window.location.href='index.html'"
+            >
+                🏠 Back to CivicFix
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="admin-login.js"></script>
+
+</body>
+
+</html>

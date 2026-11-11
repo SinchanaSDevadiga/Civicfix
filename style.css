@@ -1,0 +1,788 @@
+/* =========================================
+   CIVICFIX - MAIN WEBSITE STYLES
+   ========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: #1769aa;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+
+/* ---------- ADMIN BUTTON ---------- */
+
+.admin-link {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    background: white;
+    color: #1769aa;
+
+    border: none;
+    padding: 9px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-link:hover {
+    background: #e8f1f8;
+}
+
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+button {
+    background: #1769aa;
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0d4f82;
+}
+
+
+/* =========================================
+   REPORT FORM
+   ========================================= */
+
+.report-form {
+    display: none;
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+.report-form h2 {
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #1769aa;
+}
+
+.report-form form {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.report-form label {
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+}
+
+.report-form input:focus,
+.report-form select:focus,
+.report-form textarea:focus {
+    outline: 2px solid #1769aa;
+
+    border-color: #1769aa;
+}
+
+.report-form textarea {
+    resize: vertical;
+}
+
+.report-form button[type="submit"] {
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   LOCATION
+   ========================================= */
+
+.location-box {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.location-box input {
+    flex: 1;
+}
+
+.location-box button {
+    white-space: nowrap;
+
+    padding: 10px 15px;
+
+    font-size: 14px;
+}
+
+#locationMessage {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: #1769aa;
+}
+
+
+/* =========================================
+   DASHBOARD
+   ========================================= */
+
+.dashboard {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ---------- DASHBOARD CARD ---------- */
+
+.card {
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    border-top: 4px solid #1769aa;
+
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+
+    color: #555;
+}
+
+.card p {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #1769aa;
+}
+
+
+/* =========================================
+   TRACK COMPLAINT
+   ========================================= */
+
+.track-section {
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.track-section h2 {
+    color: #1769aa;
+
+    margin-bottom: 8px;
+}
+
+.track-section > p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- TRACK BOX ---------- */
+
+.track-box {
+    display: flex;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    gap: 10px;
+}
+
+.track-box input {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+.track-box input:focus {
+    outline: 2px solid #1769aa;
+}
+
+
+/* ---------- TRACKING RESULT ---------- */
+
+.tracking-result {
+    margin-top: 20px;
+
+    text-align: left;
+}
+
+
+/* ---------- TRACK CARD ---------- */
+
+.track-card {
+    background: #f4f7fb;
+
+    border-left: 5px solid #1769aa;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    margin-top: 15px;
+}
+
+.track-card h3 {
+    color: #1769aa;
+
+    margin-bottom: 12px;
+}
+
+.track-card p {
+    margin: 8px 0;
+
+    color: #333;
+}
+
+
+/* ---------- TRACK STATUS ---------- */
+
+.track-status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    background: #fff3cd;
+
+    color: #856404;
+}
+
+
+/* =========================================
+   RECENT ISSUES
+   ========================================= */
+
+.issues {
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+}
+
+.issues h2 {
+    margin-bottom: 15px;
+
+    color: #1769aa;
+}
+
+
+/* =========================================
+   SEARCH + FILTER
+   ========================================= */
+
+.filters {
+    max-width: 900px;
+
+    margin: 0 auto 20px auto;
+
+    display: flex;
+
+    gap: 15px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+.filters select {
+    width: 180px;
+
+    background: white;
+}
+
+.filters input:focus,
+.filters select:focus {
+    outline: 2px solid #1769aa;
+}
+
+
+/* =========================================
+   ISSUE CARD
+   ========================================= */
+
+.issue-card {
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    border-left: 5px solid #1769aa;
+}
+
+.issue-card h3 {
+    margin-bottom: 12px;
+
+    color: #1769aa;
+}
+
+.issue-card p {
+    margin: 8px 0;
+}
+
+
+/* =========================================
+   COMPLAINT ID
+   ========================================= */
+
+.complaint-id {
+    display: inline-block;
+
+    background: #e8f1f8;
+
+    color: #1769aa;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   DEADLINE
+   ========================================= */
+
+.deadline {
+    color: #8a5a00;
+
+    font-weight: bold;
+
+    background: #fff3cd;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    display: inline-block;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* Pending */
+
+.status-pending {
+    background: #fff3cd;
+
+    color: #856404;
+}
+
+
+/* In Progress */
+
+.status-progress {
+    background: #cfe2ff;
+
+    color: #084298;
+}
+
+
+/* Resolved */
+
+.status-resolved {
+    background: #d1e7dd;
+
+    color: #0f5132;
+}
+
+
+/* ---------- STATUS SELECT ---------- */
+
+.status-select {
+    padding: 6px 10px;
+
+    border-radius: 15px;
+
+    border: 1px solid #ccc;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #fff3cd;
+
+    color: #856404;
+
+    margin-left: 5px;
+}
+
+.status-select:focus {
+    outline: 2px solid #1769aa;
+}
+
+
+/* =========================================
+   MAP BUTTON
+   ========================================= */
+
+.map-button {
+    margin: 10px 0 15px 0;
+
+    background: #1769aa;
+
+    padding: 9px 15px;
+
+    font-size: 14px;
+}
+
+.map-button:hover {
+    background: #0d4f82;
+}
+
+
+/* =========================================
+   ISSUE PHOTO
+   ========================================= */
+
+.issue-photo {
+    display: block;
+
+    width: 250px;
+
+    max-height: 200px;
+
+    object-fit: cover;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    border: 2px solid #1769aa;
+}
+
+.issue-photo:hover {
+    opacity: 0.85;
+}
+
+.photo-hint {
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    text-align: center;
+
+    background: #222;
+
+    color: white;
+
+    padding: 15px;
+
+    margin-top: 50px;
+}
+
+
+/* =========================================
+   MOBILE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    /* Header */
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+
+    /* Admin button */
+
+    .admin-link {
+        position: static;
+
+        margin-top: 15px;
+    }
+
+
+    /* Dashboard */
+
+    .dashboard {
+        grid-template-columns: 1fr;
+
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+
+        margin: auto;
+    }
+
+
+    /* Report form */
+
+    .report-form {
+        width: 90%;
+
+        padding: 20px;
+    }
+
+
+    /* Location */
+
+    .location-box {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .location-box button {
+        width: 100%;
+    }
+
+
+    /* Search */
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+
+    /* Tracking */
+
+    .track-box {
+        flex-direction: column;
+    }
+
+    .track-box button {
+        width: 100%;
+    }
+
+
+    /* Issue photo */
+
+    .issue-photo {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+
+    /* Issue cards */
+
+    .issue-card {
+        padding: 15px;
+    }
+
+}
+/* 🤖 CIVICFIX AI VERIFICATION BOX */
+
+.ai-verification {
+    margin-top: 18px;
+    padding: 16px;
+    background: #eef7ff;
+    border-left: 5px solid #1976d2;
+    border-radius: 10px;
+}
+
+.ai-verification h3 {
+    margin: 0 0 10px 0;
+    color: #1565c0;
+    font-size: 20px;
+}
+
+.ai-verification p {
+    margin: 7px 0;
+    font-size: 16px;
+}
+
+.ai-confidence {
+    font-weight: bold;
+    color: #1565c0;
+}
